@@ -19,7 +19,7 @@ def write_csv(filename, array, classification):
         for row in array:
             writer.writerow(row)
 
-write_csv('csvs/X_train.csv', X_train, False)
-write_csv('csvs/X_test.csv', X_test, False)
-write_csv('csvs/y_train.csv', y_train, True)
-write_csv('csvs/y_test.csv', y_test, True)
+write_csv('X_train.csv', X_train, False)
+write_csv('X_test.csv', X_test, False)
+write_csv('y_train.csv', y_train, True)
+write_csv('y_test.csv', y_test, True)

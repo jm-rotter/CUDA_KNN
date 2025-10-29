@@ -4,7 +4,11 @@
 #include <vector>
 #include <string>
 #include <cuda_runtime.h>
-#include "knn.h"
+
+
+#include "distance_kernels.h"
+#include "evaluation.h"
+#include "globals.h"
 
 //from https://stackoverflow.com/questions/14038589/what-is-the-canonical-way-to-check-for-errors-using-the-cuda-runtime-api
 #define gpuErrchk(ans) { gpuAssert((ans), __FILE__, __LINE__); }
@@ -60,20 +64,21 @@ std::vector<int> read_csv_int(const std::string& filename) {
 }
 
 int main() {
+	distanceType dist_type = parse_distance_type(argv[1]);
 	int n_features = 4;
 	int n_train;
 	int n_test;
 
 	//training data
-	std::vector<float> X_train = read_csv_float("csvs/X_train.csv", n_train, n_features);
+	std::vector<float> X_train = read_csv_float(std::string(PROJECT_SOURCE_DIR) + "/csvs/X_train.csv", n_train, n_features);
 	std::cout << "Read " << n_train << " rows of " << n_features << " features\n";
-	std::vector<int> y_train = read_csv_int("csvs/y_train.csv");
+	std::vector<int> y_train = read_csv_int(std::string(PROJECT_SOURCE_DIR) + "/csvs/y_train.csv");
 	std::cout << "Read " << y_train.size() << " labels\n";
 
 	//test data
-	std::vector<float> X_test = read_csv_float("csvs/X_test.csv", n_test, n_features);
+	std::vector<float> X_test = read_csv_float(std::string(PROJECT_SOURCE_DIR) + "/csvs/X_test.csv", n_test, n_features);
 	std::cout << "Read " << n_test << " rows of " << n_features << " features\n";
-	std::vector<int> y_test = read_csv_int("csvs/y_test.csv");
+	std::vector<int> y_test = read_csv_int(std::string(PROJECT_SOURCE_DIR) + "/csvs/y_test.csv");
 	std::cout << "Read " << y_train.size() << " labels\n";
 	
 

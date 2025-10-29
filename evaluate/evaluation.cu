@@ -1,24 +1,5 @@
-#define MAX_K 32
-#define MAX_CLASSES 16
-
-
-__global__ void compute_l1_distance(
-		float *X_train, float *X_test, float *dists, 
-		int n_train, int n_test, int n_features){
-
-	int i_train = blockIdx.x * blockDim.x + threadIdx.x;
-	int i_test = blockIdx.y * blockDim.y + threadIdx.y;
-
-	if(i_test < n_test && i_train < n_train) {
-		float dist = 0.0f;
-		for(int k = 0; k < n_features; k++) {
-			dist += fabs(X_test[i_test * n_features + k] - X_train[i_train *n_features + k]);
-		}
-		dists[i_test + i_train*n_test] = dist;
-	}
-		
-}
-
+#include "evaluation.h"
+#include "globals.h"
 __global__ void compute_class(
 		float *dists, int n_train, int n_test, int* y_train, int* y_pred, int k, int classes) {
 	int index = threadIdx.x + threadIdx.y*blockDim.x;
