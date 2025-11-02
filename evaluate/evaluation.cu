@@ -1,8 +1,11 @@
 #include "evaluation.h"
 #include "globals.h"
+#include <cstdio>
+
+
 __global__ void compute_class(
 		float *dists, int n_train, int n_test, int* y_train, int* y_pred, int k, int classes) {
-	int index = threadIdx.x + threadIdx.y*blockDim.x;
+	int index = threadIdx.x + blockIdx.x*blockDim.x;
 
 	if (index >= n_test) {
 		return;

@@ -7,7 +7,7 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "/home/ubuntu/jaden/knn_cuda/CMakeLists.txt"
+  "/home/ubuntu/jaden/CUDA_KNN/CMakeLists.txt"
   "CMakeFiles/3.26.4/CMakeCUDACompiler.cmake"
   "CMakeFiles/3.26.4/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.26.4/CMakeSystem.cmake"
@@ -42,5 +42,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/knn_cuda.dir/DependInfo.cmake"
+  "CMakeFiles/CUDA_KNN.dir/DependInfo.cmake"
   )

@@ -1,4 +1,4 @@
-# Install script for directory: /home/ubuntu/jaden/knn_cuda
+# Install script for directory: /home/ubuntu/jaden/CUDA_KNN
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ubuntu/jaden/knn_cuda/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ubuntu/jaden/CUDA_KNN/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

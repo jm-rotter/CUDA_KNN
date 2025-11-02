@@ -57,10 +57,10 @@ RM = /opt/cmake-3.26/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/jaden/knn_cuda
+CMAKE_SOURCE_DIR = /home/ubuntu/jaden/CUDA_KNN
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/jaden/knn_cuda/build
+CMAKE_BINARY_DIR = /home/ubuntu/jaden/CUDA_KNN/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/jaden/knn_cuda/build/CMakeFiles /home/ubuntu/jaden/knn_cuda/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/jaden/CUDA_KNN/build/CMakeFiles /home/ubuntu/jaden/CUDA_KNN/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/jaden/knn_cuda/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/jaden/CUDA_KNN/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,96 +117,72 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named knn_cuda
+# Target rules for targets named CUDA_KNN
 
 # Build rule for target.
-knn_cuda: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 knn_cuda
-.PHONY : knn_cuda
+CUDA_KNN: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CUDA_KNN
+.PHONY : CUDA_KNN
 
 # fast build rule for target.
-knn_cuda/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/knn_cuda.dir/build.make CMakeFiles/knn_cuda.dir/build
-.PHONY : knn_cuda/fast
+CUDA_KNN/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CUDA_KNN.dir/build.make CMakeFiles/CUDA_KNN.dir/build
+.PHONY : CUDA_KNN/fast
 
-distance_kernels/distance_parse.o: distance_kernels/distance_parse.cpp.o
+distance_kernels/distance.o: distance_kernels/distance.cu.o
+.PHONY : distance_kernels/distance.o
+
+# target to build an object file
+distance_kernels/distance.cu.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CUDA_KNN.dir/build.make CMakeFiles/CUDA_KNN.dir/distance_kernels/distance.cu.o
+.PHONY : distance_kernels/distance.cu.o
+
+distance_kernels/distance.i: distance_kernels/distance.cu.i
+.PHONY : distance_kernels/distance.i
+
+# target to preprocess a source file
+distance_kernels/distance.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CUDA_KNN.dir/build.make CMakeFiles/CUDA_KNN.dir/distance_kernels/distance.cu.i
+.PHONY : distance_kernels/distance.cu.i
+
+distance_kernels/distance.s: distance_kernels/distance.cu.s
+.PHONY : distance_kernels/distance.s
+
+# target to generate assembly for a file
+distance_kernels/distance.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CUDA_KNN.dir/build.make CMakeFiles/CUDA_KNN.dir/distance_kernels/distance.cu.s
+.PHONY : distance_kernels/distance.cu.s
+
+distance_kernels/distance_parse.o: distance_kernels/distance_parse.cu.o
 .PHONY : distance_kernels/distance_parse.o
 
 # target to build an object file
-distance_kernels/distance_parse.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/knn_cuda.dir/build.make CMakeFiles/knn_cuda.dir/distance_kernels/distance_parse.cpp.o
-.PHONY : distance_kernels/distance_parse.cpp.o
+distance_kernels/distance_parse.cu.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CUDA_KNN.dir/build.make CMakeFiles/CUDA_KNN.dir/distance_kernels/distance_parse.cu.o
+.PHONY : distance_kernels/distance_parse.cu.o
 
-distance_kernels/distance_parse.i: distance_kernels/distance_parse.cpp.i
+distance_kernels/distance_parse.i: distance_kernels/distance_parse.cu.i
 .PHONY : distance_kernels/distance_parse.i
 
 # target to preprocess a source file
-distance_kernels/distance_parse.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/knn_cuda.dir/build.make CMakeFiles/knn_cuda.dir/distance_kernels/distance_parse.cpp.i
-.PHONY : distance_kernels/distance_parse.cpp.i
+distance_kernels/distance_parse.cu.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CUDA_KNN.dir/build.make CMakeFiles/CUDA_KNN.dir/distance_kernels/distance_parse.cu.i
+.PHONY : distance_kernels/distance_parse.cu.i
 
-distance_kernels/distance_parse.s: distance_kernels/distance_parse.cpp.s
+distance_kernels/distance_parse.s: distance_kernels/distance_parse.cu.s
 .PHONY : distance_kernels/distance_parse.s
 
 # target to generate assembly for a file
-distance_kernels/distance_parse.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/knn_cuda.dir/build.make CMakeFiles/knn_cuda.dir/distance_kernels/distance_parse.cpp.s
-.PHONY : distance_kernels/distance_parse.cpp.s
-
-distance_kernels/l1_distance.o: distance_kernels/l1_distance.cu.o
-.PHONY : distance_kernels/l1_distance.o
-
-# target to build an object file
-distance_kernels/l1_distance.cu.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/knn_cuda.dir/build.make CMakeFiles/knn_cuda.dir/distance_kernels/l1_distance.cu.o
-.PHONY : distance_kernels/l1_distance.cu.o
-
-distance_kernels/l1_distance.i: distance_kernels/l1_distance.cu.i
-.PHONY : distance_kernels/l1_distance.i
-
-# target to preprocess a source file
-distance_kernels/l1_distance.cu.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/knn_cuda.dir/build.make CMakeFiles/knn_cuda.dir/distance_kernels/l1_distance.cu.i
-.PHONY : distance_kernels/l1_distance.cu.i
-
-distance_kernels/l1_distance.s: distance_kernels/l1_distance.cu.s
-.PHONY : distance_kernels/l1_distance.s
-
-# target to generate assembly for a file
-distance_kernels/l1_distance.cu.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/knn_cuda.dir/build.make CMakeFiles/knn_cuda.dir/distance_kernels/l1_distance.cu.s
-.PHONY : distance_kernels/l1_distance.cu.s
-
-distance_kernels/l2_distance.o: distance_kernels/l2_distance.cu.o
-.PHONY : distance_kernels/l2_distance.o
-
-# target to build an object file
-distance_kernels/l2_distance.cu.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/knn_cuda.dir/build.make CMakeFiles/knn_cuda.dir/distance_kernels/l2_distance.cu.o
-.PHONY : distance_kernels/l2_distance.cu.o
-
-distance_kernels/l2_distance.i: distance_kernels/l2_distance.cu.i
-.PHONY : distance_kernels/l2_distance.i
-
-# target to preprocess a source file
-distance_kernels/l2_distance.cu.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/knn_cuda.dir/build.make CMakeFiles/knn_cuda.dir/distance_kernels/l2_distance.cu.i
-.PHONY : distance_kernels/l2_distance.cu.i
-
-distance_kernels/l2_distance.s: distance_kernels/l2_distance.cu.s
-.PHONY : distance_kernels/l2_distance.s
-
-# target to generate assembly for a file
-distance_kernels/l2_distance.cu.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/knn_cuda.dir/build.make CMakeFiles/knn_cuda.dir/distance_kernels/l2_distance.cu.s
-.PHONY : distance_kernels/l2_distance.cu.s
+distance_kernels/distance_parse.cu.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CUDA_KNN.dir/build.make CMakeFiles/CUDA_KNN.dir/distance_kernels/distance_parse.cu.s
+.PHONY : distance_kernels/distance_parse.cu.s
 
 evaluate/evaluation.o: evaluate/evaluation.cu.o
 .PHONY : evaluate/evaluation.o
 
 # target to build an object file
 evaluate/evaluation.cu.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/knn_cuda.dir/build.make CMakeFiles/knn_cuda.dir/evaluate/evaluation.cu.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CUDA_KNN.dir/build.make CMakeFiles/CUDA_KNN.dir/evaluate/evaluation.cu.o
 .PHONY : evaluate/evaluation.cu.o
 
 evaluate/evaluation.i: evaluate/evaluation.cu.i
@@ -214,7 +190,7 @@ evaluate/evaluation.i: evaluate/evaluation.cu.i
 
 # target to preprocess a source file
 evaluate/evaluation.cu.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/knn_cuda.dir/build.make CMakeFiles/knn_cuda.dir/evaluate/evaluation.cu.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CUDA_KNN.dir/build.make CMakeFiles/CUDA_KNN.dir/evaluate/evaluation.cu.i
 .PHONY : evaluate/evaluation.cu.i
 
 evaluate/evaluation.s: evaluate/evaluation.cu.s
@@ -222,7 +198,7 @@ evaluate/evaluation.s: evaluate/evaluation.cu.s
 
 # target to generate assembly for a file
 evaluate/evaluation.cu.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/knn_cuda.dir/build.make CMakeFiles/knn_cuda.dir/evaluate/evaluation.cu.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CUDA_KNN.dir/build.make CMakeFiles/CUDA_KNN.dir/evaluate/evaluation.cu.s
 .PHONY : evaluate/evaluation.cu.s
 
 main.o: main.cu.o
@@ -230,7 +206,7 @@ main.o: main.cu.o
 
 # target to build an object file
 main.cu.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/knn_cuda.dir/build.make CMakeFiles/knn_cuda.dir/main.cu.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CUDA_KNN.dir/build.make CMakeFiles/CUDA_KNN.dir/main.cu.o
 .PHONY : main.cu.o
 
 main.i: main.cu.i
@@ -238,7 +214,7 @@ main.i: main.cu.i
 
 # target to preprocess a source file
 main.cu.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/knn_cuda.dir/build.make CMakeFiles/knn_cuda.dir/main.cu.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CUDA_KNN.dir/build.make CMakeFiles/CUDA_KNN.dir/main.cu.i
 .PHONY : main.cu.i
 
 main.s: main.cu.s
@@ -246,7 +222,7 @@ main.s: main.cu.s
 
 # target to generate assembly for a file
 main.cu.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/knn_cuda.dir/build.make CMakeFiles/knn_cuda.dir/main.cu.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CUDA_KNN.dir/build.make CMakeFiles/CUDA_KNN.dir/main.cu.s
 .PHONY : main.cu.s
 
 # Help Target
@@ -257,16 +233,13 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... knn_cuda"
+	@echo "... CUDA_KNN"
+	@echo "... distance_kernels/distance.o"
+	@echo "... distance_kernels/distance.i"
+	@echo "... distance_kernels/distance.s"
 	@echo "... distance_kernels/distance_parse.o"
 	@echo "... distance_kernels/distance_parse.i"
 	@echo "... distance_kernels/distance_parse.s"
-	@echo "... distance_kernels/l1_distance.o"
-	@echo "... distance_kernels/l1_distance.i"
-	@echo "... distance_kernels/l1_distance.s"
-	@echo "... distance_kernels/l2_distance.o"
-	@echo "... distance_kernels/l2_distance.i"
-	@echo "... distance_kernels/l2_distance.s"
 	@echo "... evaluate/evaluation.o"
 	@echo "... evaluate/evaluation.i"
 	@echo "... evaluate/evaluation.s"
