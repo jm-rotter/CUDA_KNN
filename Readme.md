@@ -34,7 +34,7 @@ Basic sklearn KNN in root. Run via `python sklearn_imp.py <distance> <neighbors>
 
 #### Benchmark
 
-Once you have built cuda repo you can run the baseline to compare CPU python implementation by sklearn with my CUDA GPU speed. 
+Once you have built cuda repo you can run the baseline (`./benchmark.sh`) to compare the CPU python implementation by sklearn with my CUDA GPU implementation in terms of speed. 
 
 
 ### Benchmark Evaluation (USING TESLA V100 GPU)
