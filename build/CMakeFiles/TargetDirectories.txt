@@ -1,3 +1,0 @@
-/home/ubuntu/jaden/CUDA_KNN/build/CMakeFiles/CUDA_KNN.dir
-/home/ubuntu/jaden/CUDA_KNN/build/CMakeFiles/edit_cache.dir
-/home/ubuntu/jaden/CUDA_KNN/build/CMakeFiles/rebuild_cache.dir

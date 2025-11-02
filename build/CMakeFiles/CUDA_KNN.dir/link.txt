@@ -1,1 +1,0 @@
-/usr/bin/g++ @CMakeFiles/CUDA_KNN.dir/objects1.rsp CMakeFiles/CUDA_KNN.dir/cmake_device_link.o -o CUDA_KNN @CMakeFiles/CUDA_KNN.dir/linkLibs.rsp -L"/usr/local/cuda/targets/x86_64-linux/lib/stubs" -L"/usr/local/cuda/targets/x86_64-linux/lib"
